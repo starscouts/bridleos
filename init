@@ -1,0 +1,10 @@
+#!/bin/ash
+
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+find /sys -name modalias -type f -print0 2> /dev/null | xargs -0 sort -u | xargs modprobe -b -a 2> /dev/null
+find /sys -name modalias -type f -print0 2> /dev/null | xargs -0 sort -u | xargs modprobe -b -a 2> /dev/null
+
+deallocvt 4
+chvt 4
+getty -n -i 0 -l /opt/bridleos/terminit /dev/tty4

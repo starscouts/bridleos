@@ -1,0 +1,14 @@
+#!/bin/ash
+clear
+cd /opt/bridleos/rubbery
+
+run () {
+  ../common/node-x86 index.js $1 $2
+  if [ $? -eq 114 ]; then
+    exit
+  else
+    run $1 $2
+  fi
+}
+
+run $1 $2

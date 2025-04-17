@@ -1,0 +1,4 @@
+#!/bin/ash
+clear
+cd /opt/bridleos/bridled
+../common/node-x86 index.js
